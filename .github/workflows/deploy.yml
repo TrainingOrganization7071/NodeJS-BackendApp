@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 env: 
-  DOCKER_IMAGE_NAME : 'appnodejs'
+  DOCKER_IMAGE_NAME : 'appbackend-azure'
 
 jobs:
   # Build and test 
