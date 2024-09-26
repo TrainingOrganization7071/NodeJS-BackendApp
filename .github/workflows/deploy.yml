@@ -117,6 +117,14 @@ jobs:
           admin: 'false'
           use-kubelogin: 'true'
 
+      # Set the target Azure Kubernetes Service (AKS) cluster. 
+      - name : Target Azure Kubernetes Service
+        uses: azure/aks-set-context@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          cluster-name: ${{ env.CLUSTER_NAME }}
+          resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
+
       # Deploys application based on given manifest file
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
