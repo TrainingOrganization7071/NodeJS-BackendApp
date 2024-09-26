@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: ---------------------
+        image: fouadallaoui/appbackend-azure:latest
         ports:
         - containerPort: 3001
 
