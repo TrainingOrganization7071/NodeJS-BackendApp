@@ -101,6 +101,12 @@ jobs:
         with:
           kubelogin-version: 'v0.0.25'
 
+      # Login to Azure using the service principal credentials
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          credentials: '${{ secrets.AZURE_CREDENTIALS }}'
+
       # Set the target Azure Kubernetes Service (AKS) cluster. 
       - name : Target Azure Kubernetes Service
         uses: azure/aks-set-context@v1
