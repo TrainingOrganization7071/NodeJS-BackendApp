@@ -12,6 +12,8 @@ on:
 env: 
   DOCKER_IMAGE_NAME : 'appbackend-azure'
 
+
+
 jobs:
   # Build and test 
   Build:
@@ -83,6 +85,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+ 
 
 
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
