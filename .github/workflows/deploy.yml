@@ -75,8 +75,7 @@ jobs:
         with:
           context: ./
           push: true
-          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{github.sha}
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{github.sha}}
 
 
   Deploy_To_AKS:
@@ -116,8 +115,8 @@ jobs:
         with:
           action: deploy
           manifests: ./deployment.yml
-          #images: |
-          #  ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
+          images: |
+            ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
 
 
 
