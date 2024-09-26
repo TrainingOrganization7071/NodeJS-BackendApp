@@ -106,7 +106,7 @@ jobs:
         with:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
           cluster-name: ${{ env.CLUSTER_NAME }}
-          resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
+          resource-group: ${{ env.RESOURCE_GROUP }}
       
       # Retrieves your Azure Kubernetes Service cluster's kubeconfig file
       - name: Get K8s context
