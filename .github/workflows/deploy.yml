@@ -84,8 +84,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v1
+        with:
+          version: 'latest'
 
- 
+      - name: Configure kubeconfig from secret
+        run: |
+          echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+
+      - name: Deploy to AKS
+        run: |
+          kubectl apply -f deployment.yml
 
 
 
