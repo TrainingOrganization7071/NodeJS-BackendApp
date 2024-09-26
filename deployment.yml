@@ -6,7 +6,7 @@ metadata:
   labels:
     app: appnodejs
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: appnodejs
@@ -34,7 +34,6 @@ spec:
   - protocol: TCP
     port: 3001
     targetPort: 3001
-    #nodePort: 31110
 
 
 
