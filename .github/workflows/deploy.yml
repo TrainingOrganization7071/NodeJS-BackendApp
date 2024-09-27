@@ -80,8 +80,7 @@ jobs:
         with:
           context: ./
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:latest
-          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{github.sha}}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{ env.DOCKER_IMAGE_TAG }}
 
 
   Deploy_To_AKS:
@@ -136,7 +135,7 @@ jobs:
           action: deploy
           manifests: ./k8s/deployment.yml
           #images: |
-          #  ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }}
+          #  ${{ env.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_IMAGE_TAG }}
       
       # Will using the kubeconfig as secret / Any K8s Cluster
       #- name: Deploy to Kubernetes cluster
