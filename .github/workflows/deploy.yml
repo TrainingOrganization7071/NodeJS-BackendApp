@@ -109,6 +109,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          auth-type: 'oidc'
           enable-AzPSSession: true
       
       #- uses: azure/login@v2
