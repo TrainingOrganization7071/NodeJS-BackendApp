@@ -109,6 +109,12 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          enable-AzPSSession: true
+      
+      #- uses: azure/login@v2
+      #  with:
+      #    creds: ${{ secrets.AZURE_CREDENTIALS }}
+      #    enable-AzPSSession: true
 
       # Set the target Azure Kubernetes Service (AKS) cluster. 
       - name : Target Azure Kubernetes Service
