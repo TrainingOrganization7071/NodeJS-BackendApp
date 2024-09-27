@@ -17,8 +17,6 @@ env:
   DOCKER_IMAGE_NAME : 'appbackend-azure'
   RESOURCE_GROUP: 'minimal_infra_auth'
   CLUSTER_NAME: 'aks_back'
-  WEBAPP_NAME: 'webapp-frontend-lpctygbcwcptmagj'
-  SERVICE_PLAN: 'webapp-frontend-plan'
   DOCKER_IMAGE_TAG: 'latest'
 
 
@@ -140,7 +138,7 @@ jobs:
           #images: |
           #  ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }}
       
-      # Will using the kubeconfig as secret
+      # Will using the kubeconfig as secret / Any K8s Cluster
       #- name: Deploy to Kubernetes cluster
       #  uses: azure/k8s-deploy@v3
       #  with:
@@ -162,4 +160,3 @@ jobs:
 
 
 
-      
