@@ -126,13 +126,6 @@ jobs:
           azcliversion: latest
           inlineScript: |
             az account show
-
-      # Set the target Azure Kubernetes Service (AKS) cluster. 
-      - name : Target Azure Kubernetes Service
-        uses: azure/aks-set-context@v1
-        with:
-          cluster-name: ${{ env.CLUSTER_NAME }}
-          resource-group: ${{ env.RESOURCE_GROUP }}
       
       # Retrieves your Azure Kubernetes Service cluster's kubeconfig file
       - name: Get K8s context
