@@ -123,6 +123,23 @@ jobs:
           admin: 'false'
           use-kubelogin: 'true'
 
+      # Get Nodes - test
+      - name: Get Nodes
+        run: |
+          kubectl get nodes
+
+      # Create TLS secret in Kubernetes
+      - name: Create TLS secret
+        run: |
+          kubectl create secret tls tls-secret --cert=path/to/tls.crt --key=path/to/tls.key
+      
+      # Create TLS secret using kubectl command in k8s-deploy action
+      - name: Create TLS secret using k8s-deploy
+        uses: Azure/k8s-deploy@v4
+        with:
+          action: 'exec'
+          kubectl-commands: 'kubectl create secret tls tls-secret --cert=path/to/tls.crt --key=path/to/tls.key'
+      
       # Deploys application based on given manifest file
       - name: Deploys application
         uses: Azure/k8s-deploy@v4
