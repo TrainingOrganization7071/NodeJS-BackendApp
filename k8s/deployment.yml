@@ -22,39 +22,20 @@ spec:
         - containerPort: 3001
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
   name: appnodejs-service
-  annotations:
-    service.beta.kubernetes.io/azure-load-balancer-internal: "true"  # Internal LB
-    service.beta.kubernetes.io/azure-load-balancer-tls-cert: "tls-secret"  # TLS Secret
+  #annotations:
+  #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"  # Keep this for an internal LB
 spec:
   selector:
     app: appnodejs
   type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 443  # Expose on HTTPS port
-      targetPort: 3001  # Target the container port
-
-
-
-#apiVersion: v1
-#kind: Service
-#metadata:
-#  name: appnodejs-service
-#  #annotations:
-#  #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"  # Keep this for an internal LB
-#spec:
-#  selector:
-#    app: appnodejs
-#  type: LoadBalancer
-#  ports:
-#    - protocol: TCP
-#      port: 3001  # The port exposed by the service
-#      targetPort: 3001  # The port on which the container is listening
+      port: 3001  # The port exposed by the service
+      targetPort: 3001  # The port on which the container is listening
 
 
 
