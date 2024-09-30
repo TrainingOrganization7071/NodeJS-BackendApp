@@ -8,5 +8,6 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
+  commonName: example.com # Replace with your domain
   dnsNames:
-    - exampleaks1.com
+  - example.com

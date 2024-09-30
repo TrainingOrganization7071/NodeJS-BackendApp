@@ -26,15 +26,14 @@ apiVersion: v1
 kind: Service
 metadata:
   name: appnodejs-service
-  #annotations:
-  #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"  # Keep this for an internal LB
+
 spec:
   selector:
     app: appnodejs
   type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 3001  # The port exposed by the service
+      port: 80  # The port exposed by the service
       targetPort: 3001  # The port on which the container is listening
 
 
