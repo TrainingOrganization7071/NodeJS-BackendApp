@@ -33,7 +33,7 @@ spec:
   type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 80  # The port exposed by the service
+      port: 3001  # The port exposed by the service
       targetPort: 3001  # The port on which the container is listening
 
 
