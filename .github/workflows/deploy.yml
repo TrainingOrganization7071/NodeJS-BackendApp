@@ -16,7 +16,7 @@ permissions:
 env: 
   DOCKER_IMAGE_NAME : 'appbackend-azure'
   RESOURCE_GROUP: 'minimal_infra_auth'
-  CLUSTER_NAME: 'aks_back'
+  CLUSTER_NAME: 'aks-cluster'
   DOCKER_IMAGE_TAG: 'latest'
 
 
