@@ -41,13 +41,21 @@ spec:
     targetPort: 3001
   selector:
     app: appnodejs
-  type: LoadBalancer
-  ports:
-    - protocol: TCP
-      port: 80  # The port exposed by the service
-      targetPort: 3001  # The port on which the container is listening
 
 
 
-
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: appnodejs-service
+#
+#spec:
+#  selector:
+#    app: appnodejs
+#  type: LoadBalancer
+#  ports:
+#    - protocol: TCP
+#      port: 80  # The port exposed by the service
+#      targetPort: 3001  # The port on which the container is listening
 
