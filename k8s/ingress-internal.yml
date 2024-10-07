@@ -4,7 +4,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: webapi
-  namespace: webapi
 spec:
   ingressClassName: nginx-internal-static
   rules:
@@ -14,9 +13,8 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: webapi-service
+            name: appnodejs-service
             port:
               number: 80
 
 
-              
